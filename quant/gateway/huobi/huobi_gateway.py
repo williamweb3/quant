@@ -34,6 +34,7 @@ from quant.trader.object import (
     ContractData,
     BarData,
     OrderRequest,
+    QueryRequest,
     CancelRequest,
     SubscribeRequest,
     HistoryRequest

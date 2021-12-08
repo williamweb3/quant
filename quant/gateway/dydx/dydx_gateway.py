@@ -13,7 +13,7 @@ import base64
 import json
 
 from requests.exceptions import SSLError
-from vnpy.trader.constant import (
+from quant.trader.constant import (
     Direction,
     Exchange,
     Product,
@@ -22,8 +22,8 @@ from vnpy.trader.constant import (
     Interval,
     Offset
 )
-from vnpy.trader.gateway import BaseGateway
-from vnpy.trader.object import (
+from quant.trader.gateway import BaseGateway
+from quant.trader.object import (
     TickData,
     OrderData,
     TradeData,
@@ -37,11 +37,11 @@ from vnpy.trader.object import (
     SubscribeRequest,
     HistoryRequest
 )
-from vnpy.trader.event import EVENT_TIMER
-from vnpy.event import Event, EventEngine
+from quant.trader.event import EVENT_TIMER
+from quant.event import Event, EventEngine
 
-from vnpy_rest import Request, RestClient, Response
-from vnpy_websocket import WebsocketClient
+from quant_rest import Request, RestClient, Response
+from quant_websocket import WebsocketClient
 from.dydx_tool import order_to_sign, generate_hash_number
 
 

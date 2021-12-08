@@ -149,7 +149,7 @@ class HuobiGateway(BaseGateway):
 
     def query_position(self) -> None:
         """"""
-        self.rest_api.query_position()
+        pass
 
     def query_history(self, req: HistoryRequest):
         """"""

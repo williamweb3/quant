@@ -40,8 +40,8 @@ from quant.trader.object import (
 from quant.trader.event import EVENT_TIMER
 from quant.event import Event, EventEngine
 
-from quant_rest import Request, RestClient, Response
-from quant_websocket import WebsocketClient
+from quant.api.rest import Request, RestClient, Response
+from quant.api.websocket import WebsocketClient
 from.dydx_tool import order_to_sign, generate_hash_number
 
 

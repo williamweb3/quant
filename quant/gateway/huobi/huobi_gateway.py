@@ -139,13 +139,16 @@ class HuobiGateway(BaseGateway):
         """"""
         self.rest_api.cancel_order(req)
 
+    def query_order(self, req: QueryRequest) -> None:
+        self.rest_api.query_order(req)
+
     def query_account(self) -> None:
         """"""
-        pass
+        self.rest_api.query_account()
 
     def query_position(self) -> None:
         """"""
-        pass
+        self.rest_api.query_position()
 
     def query_history(self, req: HistoryRequest):
         """"""

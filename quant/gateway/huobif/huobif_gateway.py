@@ -38,6 +38,7 @@ from quant.trader.object import (
     PositionData,
     ContractData,
     OrderRequest,
+    QueryRequest,
     CancelRequest,
     SubscribeRequest,
     HistoryRequest
@@ -163,6 +164,10 @@ class HuobifGateway(BaseGateway):
     def cancel_order(self, req: CancelRequest):
         """"""
         self.rest_api.cancel_order(req)
+
+    def query_order(self, req: QueryRequest) -> None:
+        # self.rest_api.query_order(req)
+        pass
 
     def send_orders(self, reqs: Sequence[OrderRequest]):
         """"""

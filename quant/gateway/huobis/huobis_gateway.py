@@ -39,6 +39,7 @@ from quant.trader.object import (
     PositionData,
     ContractData,
     OrderRequest,
+    QueryRequest,
     CancelRequest,
     SubscribeRequest,
     HistoryRequest
@@ -148,6 +149,7 @@ class HuobisGateway(BaseGateway):
     def subscribe(self, req: SubscribeRequest) -> None:
         """"""
         self.market_ws_api.subscribe(req)
+		self.trade_ws_api.subscribe(req)
 
     def send_order(self, req: OrderRequest) -> str:
         """"""
@@ -156,6 +158,10 @@ class HuobisGateway(BaseGateway):
     def cancel_order(self, req: CancelRequest) -> Request:
         """"""
         self.rest_api.cancel_order(req)
+
+    def query_order(self, req: QueryRequest) -> None:
+        # self.rest_api.query_order(req)
+        pass
 
     def send_orders(self, reqs: Sequence[OrderRequest]) -> str:
         """"""

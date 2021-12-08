@@ -141,11 +141,13 @@ class HuobiGateway(BaseGateway):
         self.rest_api.cancel_order(req)
 
     def query_order(self, req: QueryRequest) -> None:
-        self.rest_api.query_order(req)
+        # self.rest_api.query_order(req)
+        pass
 
     def query_account(self) -> None:
         """"""
-        self.rest_api.query_account()
+        # self.rest_api.query_account()
+		pass
 
     def query_position(self) -> None:
         """"""

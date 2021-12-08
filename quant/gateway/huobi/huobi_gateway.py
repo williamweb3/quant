@@ -1,7 +1,3 @@
-"""
-火币交易接口
-"""
-
 import re
 import urllib
 import base64
@@ -147,7 +143,7 @@ class HuobiGateway(BaseGateway):
     def query_account(self) -> None:
         """"""
         # self.rest_api.query_account()
-		pass
+        pass
 
     def query_position(self) -> None:
         """"""

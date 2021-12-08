@@ -21,5 +21,8 @@
 
 
 # 使用 Usage
-你需要在项目下面创建一个文件夹加，quant, 这个主要是存放一些日记和配置文件的信息。
+下载ui_run.py 及no_ui.py，建立同级目录quant及strategies，将策略代码放入strategies文件夹内，
+若用界面运行，执行python ui_run.py
+非界面运行策略，执行python no_ui.py
+
 

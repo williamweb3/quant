@@ -18,11 +18,11 @@ from typing import Dict
 from requests import ConnectionError
 from pytz import utc as UTC_TZ
 
-from vnpy.api.rest import Request, RestClient
-from vnpy.api.websocket import WebsocketClient
-from vnpy.trader.constant import (Direction, Exchange, Interval, Offset, OrderType, Product, Status)
-from vnpy.trader.gateway import BaseGateway
-from vnpy.trader.object import (AccountData, BarData, CancelRequest, ContractData, HistoryRequest,
+from quant.api.rest import Request, RestClient
+from quant.api.websocket import WebsocketClient
+from quant.trader.constant import (Direction, Exchange, Interval, Offset, OrderType, Product, Status)
+from quant.trader.gateway import BaseGateway
+from quant.trader.object import (AccountData, BarData, CancelRequest, ContractData, HistoryRequest,
                                 OrderData, OrderRequest, PositionData, SubscribeRequest, TickData,
                                 TradeData)
 

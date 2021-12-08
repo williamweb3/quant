@@ -15,10 +15,10 @@ import pytz
 
 import requests
 
-from vnpy.api.rest import Request, RestClient, RequestStatus
-from vnpy.api.websocket import WebsocketClient
+from quant.api.rest import Request, RestClient, RequestStatus
+from quant.api.websocket import WebsocketClient
 
-from vnpy.trader.constant import (
+from quant.trader.constant import (
     Direction,
     Exchange,
     OrderType,
@@ -26,8 +26,8 @@ from vnpy.trader.constant import (
     Status,
     Interval
 )
-from vnpy.trader.gateway import BaseGateway, LocalOrderManager
-from vnpy.trader.object import (
+from quant.trader.gateway import BaseGateway, LocalOrderManager
+from quant.trader.object import (
     TickData,
     OrderData,
     TradeData,
@@ -40,7 +40,7 @@ from vnpy.trader.object import (
     HistoryRequest
 )
 
-from vnpy.trader.event import EVENT_TIMER
+from quant.trader.event import EVENT_TIMER
 
 
 REST_HOST = "https://www.bitstamp.net/api/v2"

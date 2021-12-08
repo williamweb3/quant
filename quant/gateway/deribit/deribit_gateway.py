@@ -1,7 +1,7 @@
 import pytz
 from typing import Callable
 
-from vnpy.trader.object import (
+from quant.trader.object import (
     TickData,
     OrderData,
     TradeData,
@@ -13,7 +13,7 @@ from vnpy.trader.object import (
     SubscribeRequest,
     HistoryRequest,
 )
-from vnpy.trader.constant import (
+from quant.trader.constant import (
     Direction,
     Offset,
     Exchange,
@@ -22,8 +22,8 @@ from vnpy.trader.constant import (
     Status,
     OptionType
 )
-from vnpy.trader.gateway import BaseGateway
-from vnpy.api.websocket import WebsocketClient
+from quant.trader.gateway import BaseGateway
+from quant.api.websocket import WebsocketClient
 
 from datetime import datetime
 from copy import copy

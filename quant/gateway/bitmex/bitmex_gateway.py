@@ -12,11 +12,11 @@ import pytz
 
 from requests import ConnectionError
 
-from vnpy.event import Event
-from vnpy.api.rest import Request, RestClient
-from vnpy.api.websocket import WebsocketClient
-from vnpy.trader.event import EVENT_TIMER
-from vnpy.trader.constant import (
+from quant.event import Event
+from quant.api.rest import Request, RestClient
+from quant.api.websocket import WebsocketClient
+from quant.trader.event import EVENT_TIMER
+from quant.trader.constant import (
     Direction,
     Exchange,
     OrderType,
@@ -25,8 +25,8 @@ from vnpy.trader.constant import (
     Offset,
     Interval
 )
-from vnpy.trader.gateway import BaseGateway
-from vnpy.trader.object import (
+from quant.trader.gateway import BaseGateway
+from quant.trader.object import (
     TickData,
     OrderData,
     TradeData,

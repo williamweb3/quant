@@ -11,12 +11,12 @@ from datetime import datetime, timedelta
 from urllib.parse import urlencode
 import pytz
 
-from vnpy.api.rest import Request, RestClient
-from vnpy.api.websocket import WebsocketClient
-from vnpy.event import Event
-from vnpy.trader.event import EVENT_TIMER
+from quant.api.rest import Request, RestClient
+from quant.api.websocket import WebsocketClient
+from quant.event import Event
+from quant.trader.event import EVENT_TIMER
 
-from vnpy.trader.constant import (
+from quant.trader.constant import (
     Direction,
     Exchange,
     OrderType,
@@ -24,8 +24,8 @@ from vnpy.trader.constant import (
     Status,
     Interval
 )
-from vnpy.trader.gateway import BaseGateway
-from vnpy.trader.object import (
+from quant.trader.gateway import BaseGateway
+from quant.trader.object import (
     TickData,
     OrderData,
     TradeData,

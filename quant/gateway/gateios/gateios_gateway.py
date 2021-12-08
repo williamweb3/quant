@@ -12,14 +12,14 @@ from urllib.parse import urlencode
 from typing import List, Dict
 from pytz import utc as UTC_TZ
 
-from vnpy.api.rest import Request, RestClient
-from vnpy.api.websocket import WebsocketClient
-from vnpy.event import Event
-from vnpy.trader.constant import (Direction, Exchange, Interval, OrderType,
+from quant.api.rest import Request, RestClient
+from quant.api.websocket import WebsocketClient
+from quant.event import Event
+from quant.trader.constant import (Direction, Exchange, Interval, OrderType,
                                   Product, Status)
-from vnpy.trader.event import EVENT_TIMER
-from vnpy.trader.gateway import BaseGateway, LocalOrderManager
-from vnpy.trader.object import (AccountData, BarData, CancelRequest,
+from quant.trader.event import EVENT_TIMER
+from quant.trader.gateway import BaseGateway, LocalOrderManager
+from quant.trader.object import (AccountData, BarData, CancelRequest,
                                 ContractData, HistoryRequest, OrderData,
                                 OrderRequest, PositionData, SubscribeRequest,
                                 TickData, TradeData)

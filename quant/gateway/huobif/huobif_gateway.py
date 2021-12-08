@@ -16,10 +16,10 @@ from threading import Lock
 from typing import Sequence
 import pytz
 
-from vnpy.event import Event
-from vnpy.api.rest import RestClient, Request
-from vnpy.api.websocket import WebsocketClient
-from vnpy.trader.constant import (
+from quant.event import Event
+from quant.api.rest import RestClient, Request
+from quant.api.websocket import WebsocketClient
+from quant.trader.constant import (
     Direction,
     Offset,
     Exchange,
@@ -28,8 +28,8 @@ from vnpy.trader.constant import (
     OrderType,
     Interval
 )
-from vnpy.trader.gateway import BaseGateway
-from vnpy.trader.object import (
+from quant.trader.gateway import BaseGateway
+from quant.trader.object import (
     TickData,
     OrderData,
     TradeData,
@@ -42,7 +42,7 @@ from vnpy.trader.object import (
     SubscribeRequest,
     HistoryRequest
 )
-from vnpy.trader.event import EVENT_TIMER
+from quant.trader.event import EVENT_TIMER
 
 
 REST_HOST = "https://api.hbdm.com"

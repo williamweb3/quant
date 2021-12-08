@@ -11,9 +11,9 @@ from simplejson.errors import JSONDecodeError
 
 from requests import ConnectionError
 
-from vnpy.api.websocket import WebsocketClient
-from vnpy.api.rest import Request, RestClient
-from vnpy.trader.constant import (
+from quant.api.websocket import WebsocketClient
+from quant.api.rest import Request, RestClient
+from quant.trader.constant import (
     Exchange,
     Interval,
     OrderType,
@@ -21,7 +21,7 @@ from vnpy.trader.constant import (
     Status,
     Direction
 )
-from vnpy.trader.object import (
+from quant.trader.object import (
     AccountData,
     BarData,
     TickData,
@@ -34,8 +34,8 @@ from vnpy.trader.object import (
     CancelRequest,
     OrderRequest
 )
-from vnpy.trader.event import EVENT_TIMER
-from vnpy.trader.gateway import BaseGateway
+from quant.trader.event import EVENT_TIMER
+from quant.trader.gateway import BaseGateway
 
 
 STATUS_BYBIT2VT: Dict[str, Status] = {

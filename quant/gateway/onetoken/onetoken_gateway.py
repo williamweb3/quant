@@ -14,17 +14,17 @@ from copy import copy
 from requests import ConnectionError
 import pytz
 
-from vnpy.api.rest import Request, RestClient
-from vnpy.api.websocket import WebsocketClient
-from vnpy.trader.constant import (
+from quant.api.rest import Request, RestClient
+from quant.api.websocket import WebsocketClient
+from quant.trader.constant import (
     Direction,
     Exchange,
     Status,
     Offset,
     Product
 )
-from vnpy.trader.gateway import BaseGateway
-from vnpy.trader.object import (
+from quant.trader.gateway import BaseGateway
+from quant.trader.object import (
     TickData,
     PositionData,
     AccountData,
@@ -35,7 +35,7 @@ from vnpy.trader.object import (
     OrderData,
     TradeData
 )
-from vnpy.trader.event import EVENT_TIMER
+from quant.trader.event import EVENT_TIMER
 
 
 REST_HOST = "https://1token.trade/api"
@@ -62,7 +62,7 @@ CHINA_TZ = pytz.timezone("Asia/Shanghai")
 # EXCHANGE_ONETOKEN2VT = {v: k for k, v in EXCHANGE_VT2ONETOKEN.items()}
 
 
-# def exg_vnpy2ot(exg):
+# def exg_quant2ot(exg):
 #     return exg
 #
 

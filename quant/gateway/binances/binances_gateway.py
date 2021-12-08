@@ -1,4 +1,4 @@
-﻿"""
+"""
 Gateway for Binance Crypto Exchange.
 """
 
@@ -449,12 +449,12 @@ class BinancesRestApi(RestClient):
             "quantity": float(req.volume),
             "newClientOrderId": orderid,
         }
-        
+        #-------------------------------------------------
         if DIRECTION_VT2BINANCES[req.direction] == "BUY":
             params["positionSide"] = "LONG"
         if DIRECTION_VT2BINANCES[req.direction] == "SELL":
             params["positionSide"] = "SHORT"
-
+        #-------------------------------------------------
         if req.offset == Offset.CLOSE:
             params["reduceOnly"] = True
 

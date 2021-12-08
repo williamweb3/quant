@@ -15,9 +15,9 @@ from datetime import datetime
 import pytz
 from typing import Dict, List, Any
 
-from vnpy.api.rest import RestClient, Request
-from vnpy.api.websocket import WebsocketClient
-from vnpy.trader.constant import (
+from quant.api.rest import RestClient, Request
+from quant.api.websocket import WebsocketClient
+from quant.trader.constant import (
     Direction,
     Exchange,
     Product,
@@ -25,8 +25,8 @@ from vnpy.trader.constant import (
     OrderType,
     Interval
 )
-from vnpy.trader.gateway import BaseGateway
-from vnpy.trader.object import (
+from quant.trader.gateway import BaseGateway
+from quant.trader.object import (
     TickData,
     OrderData,
     TradeData,

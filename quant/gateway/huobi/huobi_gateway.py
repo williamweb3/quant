@@ -129,6 +129,7 @@ class HuobiGateway(BaseGateway):
     def subscribe(self, req: SubscribeRequest) -> None:
         """"""
         self.market_ws_api.subscribe(req)
+        self.trade_ws_api.subscribe(req)
 
     def send_order(self, req: OrderRequest) -> str:
         """"""
@@ -627,12 +628,12 @@ class HuobiTradeWebsocketApi(HuobiWebsocketApiBase):
             proxy_port
         )
 
-    def subscribe_order_update(self) -> None:
+    def subscribe(self, req: SubscribeRequest) -> None:
         """"""
         self.req_id += 1
         req = {
             "action": "sub",
-            "ch": f"orders#*"
+            "ch": f"orders#{req.symbol}"
         }
         self.send_packet(req)
 
@@ -653,8 +654,6 @@ class HuobiTradeWebsocketApi(HuobiWebsocketApiBase):
         """"""
         if "data" in packet and not packet["data"]:
             self.gateway.write_log("交易Websocket API登录成功")
-
-            self.subscribe_order_update()
             self.subscribe_account_update()
         else:
             msg = packet["message"]
@@ -768,16 +767,10 @@ class HuobiDataWebsocketApi(HuobiWebsocketApiBase):
         """"""
         self.gateway.write_log("行情Websocket API连接成功")
 
-        for symbol in self.ticks.keys():
-            self.subscribe_by_symbol(symbol)
-
     def subscribe(self, req: SubscribeRequest) -> None:
         """"""
         symbol = req.symbol
-        self.subscribe_by_symbol(symbol)
 
-    def subscribe_by_symbol(self, symbol: str) -> None:
-        """"""
         # Create tick data buffer
         tick = TickData(
             symbol=symbol,
@@ -947,5 +940,5 @@ def create_signature_v2(
 def generate_datetime(timestamp: float) -> datetime:
     """"""
     dt = datetime.fromtimestamp(timestamp)
-    dt = CHINA_TZ.localize(dt)
+    dt = dt.replace(tzinfo=CHINA_TZ)
     return dt

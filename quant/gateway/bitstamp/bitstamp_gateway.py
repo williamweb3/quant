@@ -650,7 +650,7 @@ class BitstampWebsocketApi(WebsocketClient):
         tick.last_volume = data["amount"]
 
         dt = datetime.fromtimestamp(int(data["timestamp"]))
-        tick.datetime = UTC_TZ.localize(dt)
+        tick.datetime = dt.replace(tzinfo=UTC_TZ)
 
         self.gateway.on_tick(copy(tick))
 
@@ -693,7 +693,7 @@ class BitstampWebsocketApi(WebsocketClient):
         tick = self.ticks[channel]
 
         dt = datetime.fromtimestamp(int(data["timestamp"]))
-        tick.datetime = UTC_TZ.localize(dt)
+        tick.datetime = dt.replace(tzinfo=UTC_TZ)
 
         bids = data["bids"]
         asks = data["asks"]
@@ -730,5 +730,5 @@ class BitstampWebsocketApi(WebsocketClient):
 def generate_datetime(timestamp: str) -> datetime:
     """"""
     dt = datetime.fromtimestamp(timestamp)
-    dt = UTC_TZ.localize(dt)
+    dt = dt.replace(tzinfo=UTC_TZ)
     return dt

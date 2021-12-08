@@ -684,5 +684,5 @@ class DeribitWebsocketApi(WebsocketClient):
 def generate_datetime(timestamp: float) -> datetime:
     """"""
     dt = datetime.fromtimestamp(timestamp / 1000)
-    dt = UTC_TZ.localize(dt)
+    dt = dt.replace(tzinfo=UTC_TZ)
     return dt

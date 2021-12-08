@@ -805,5 +805,5 @@ class BitmexWebsocketApi(WebsocketClient):
 def generate_datetime(timestamp: str) -> datetime:
     """"""
     dt = datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S.%fZ")
-    dt = UTC_TZ.localize(dt)
+    dt = dt.replace(tzinfo=UTC_TZ)
     return dt

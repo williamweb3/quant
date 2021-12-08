@@ -95,8 +95,7 @@ INTERVAL_VT2HUOBIF = {
 CONTRACT_TYPE_MAP = {
     "this_week": "CW",
     "next_week": "NW",
-    "quarter": "CQ",
-    "next_quarter": "NQ"
+    "quarter": "CQ"
 }
 
 TIMEDELTA_MAP = {
@@ -1062,5 +1061,5 @@ def create_signature(api_key, method, host, path, secret_key, get_params=None):
 def generate_datetime(timestamp: float) -> datetime:
     """"""
     dt = datetime.fromtimestamp(timestamp)
-    dt = CHINA_TZ.localize(dt)
+    dt = dt.replace(tzinfo=CHINA_TZ)
     return dt

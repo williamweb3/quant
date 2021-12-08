@@ -40,7 +40,7 @@ from quant.trader.object import (
 from quant.trader.event import EVENT_TIMER
 from quant.event import Event, EventEngine
 
-from quant.api.rest import Request, RestClient, Response
+from quant.api.rest import Request, RestClient
 from quant.api.websocket import WebsocketClient
 from.dydx_tool import order_to_sign, generate_hash_number
 
@@ -405,8 +405,14 @@ class DydxRestApi(RestClient):
             "resolution": INTERVAL_VT2DYDX[req.interval]
         }
 
-        resp: Response = self.request(
-            method="GET",
+        # resp: Response = self.request(
+        #     method="GET",
+        #     path=f"/v3/candles/{req.symbol}",
+        #     data=data,
+        #     params=params
+        # )
+        resp = self.request(
+            "GET",
             path=f"/v3/candles/{req.symbol}",
             data=data,
             params=params

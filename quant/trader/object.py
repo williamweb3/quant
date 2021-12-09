@@ -1,4 +1,4 @@
-"""
+﻿"""
 Basic data structure used for general trading function in VN Trader.
 """
 
@@ -333,7 +333,7 @@ class CancelRequest:
 class QueryRequest:
     """
     Request sending to specific gateway for query an existing order.
-    Author: 51bitquant
+
     """
     orderid: str
     symbol: str
